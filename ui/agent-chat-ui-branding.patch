@@ -1,0 +1,250 @@
+diff --git a/next.config.mjs b/next.config.mjs
+index fc5e0f6..f7fb768 100644
+--- a/next.config.mjs
++++ b/next.config.mjs
+@@ -1,5 +1,7 @@
+ /** @type {import('next').NextConfig} */
+ const nextConfig = {
++  // Hide the Next.js "N" dev-mode badge (dev only; production never shows it).
++  devIndicators: false,
+   experimental: {
+     serverActions: {
+       bodySizeLimit: "10mb",
+diff --git a/src/app/favicon.ico b/src/app/favicon.ico
+deleted file mode 100644
+index 7937357740eac249344f006ea122e2f0f10014f9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 15406
+zcmeHNYiL|W6u#1Gn!d7|v`Nk8u}Pa(W4kdmZ6ZeUY9ThJjTM{63K3eGSo?q`W~;_1
+z{?JMxse<^cqEy9#kV-63;{&Tj&|msX!5`HhMg%G1vna>;ZanMk&D?u;_hvV{>0KCR
+zc3$T@k2&Ye>}uK#+A_`K(M0Xn29|5uc1_d#{<-g!UQIhI`f6(a8!y+i%j-3*Qp^!c
+z#EQ9oQ7J#3jAgXcN=1Gawbm4d`6~3Tr2CpGsX0&(?la>#*j7zfXGUmxyicEd*Y*<n
+z{=#vh&&Kp}YOsZ}GnXs(@nvPwPt(KtJgmRBv7COqcp|*^z2|~desh*`E$~zqdFkcR
+zJ$iZl$$RLFmk!cDmmjC!K6->^Y}U&BfbKWvAEKVtD(Y<5NE1hQQtA5DrgY`C?R6z#
+z%!7MsDb(9Qe}4QZy&`ZGcrq>b$X$ICef#DSo!@JpjMB;A?Yb->yI<Z9QOAx_%k_=7
+z<cDST!SnZ1iNIW$@1gFNO1iBqm%J;iZFN)L8oKuBDA~zb=GWLh*b%VQk#T;ye^)w%
+z7&_r+{Gv380{>+8Nq0H9_^r>LE1#tyANcSG+PBaPL+w;sx=!h@5nIn3+ePP}+9zUF
+zrygUR>K`!`u@*58@!}5=bJ}h#ilAR1V&`jPUG&$b$HH-f<MQ-)F9rNL5%Xig)DkG9
+zAEy3~)kgZDed)#id32fn?As@(u{u94`Z<|5(mNA<5qrz@L3`#*Fk+nPqMj8w#=bkt
+z<Dv~2)ose9zeS!Q@5%IS`4+V8;<}w4U~jV*ha$>%BInvI@`Xh5&A5uPS5jSBUPJ-y
+zVB2PzJhgwGY#^sE&kfM7ZN+iRoN23S*7wivj!@H<0+G8`=w}V~H+8y)4tH(Sb0gJS
+zr+r3!BOjIb9NNEwE(n=ySi2&kU!D_hoB5XQ@GBu_|GHHKzck!kAGT4PmuPd^Xz&>M
+zW(;4yahS?Btkr4%F7j~h$9VyUg_6Vgk)7eanFi|5&mN!=k%P;9a{H}ky9I^}N4lu;
+zdFj^=Pbz6l2tR*!{YH`3ADuT2`yA@2*L4$(jLqg8*d3U+H+aNd0(Stc^NG91q0SmQ
+zH?~(Vqy2YKmCxgdZ^kn$c#vg^Hhe1XLOdstHSVS|eW(6BR;-XMbjf@>_2;qD$NYzd
+zjbE8O?kJAMLzma&t;wLR#qsA4ypLNijXc=Z<HG9E>|Nk`>Bl>Xc%s$%MRDIr7S^`h
+zv+ByzwE@=#TpMt0z_kHqHh?=2-hT1cgc6NB9~8e6;#~@FVpk@Q>E+cYx*Wd?MnjwD
+z05@pL_h{TFd0bTkH|EG|jBUuEvD#<3k81B&`hZ=9!wUa1hng*M%Y0m&3B~<3ZO2D(
+z&MGB#&^N;$3wG@D^gwgM<d3~&S;=h`{#3#a*+aK7X1Q&|pGw$aS9oWV@fzDQ{#3&b
+z{8qLDUKoEWVh8?S@%sjRrddH8u+x!IXNf$kcD~3s4!Hw=NdF&-`8i=-4eqT?n4d9X
+zv-{3A0~<noz*&cE5o1~AIQxiCz>PU}dnRj~u`^ECml^H8*3CL^X5-23H)3boP~kxS
+zfN|&q`cchEW}gZ>>%jP?&)9i<v3an<4ver9mZcH<V)I~!9r)O{m|<Tm9-{T{_-}(9
+z_Ql`<{*URJ)%ZW>*5Yi-T*<hW^~E-qh#L0_BVE;Z_Mh<acKjk<Bm+C-fw-!|EBDRG
+zJ~B3S)R*daOujFoo;uyF<4&d@MSde=RkcIGhOpmBgbg^^(++<s<zgy6t?Vb&v4bDj
+zvC3xB0Xyph{zB#<ov?!k_&Ua)ZrE7|z@4txnFqIa_U`J+&y}BR1Fj9YHgJ90fcSfm
+L`*9@@w*>wL?N;2r
+
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index af31f8e..5a44c47 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -11,8 +11,8 @@ const inter = Inter({
+ });
+ 
+ export const metadata: Metadata = {
+-  title: "Agent Chat",
+-  description: "Agent Chat UX by LangChain",
++  title: process.env.NEXT_PUBLIC_APP_NAME || "Docs Assistant",
++  description: "Ask questions about the documentation.",
+ };
+ 
+ export default function RootLayout({
+diff --git a/src/components/icons/brand.tsx b/src/components/icons/brand.tsx
+new file mode 100644
+index 0000000..96c005b
+--- /dev/null
++++ b/src/components/icons/brand.tsx
+@@ -0,0 +1,4 @@
++// App name shown in the header, setup screen and browser tab (replaces "Agent Chat").
++// Set NEXT_PUBLIC_APP_NAME in .env to rebrand for a client.
++
++export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Docs Assistant";
+diff --git a/src/components/icons/langgraph.tsx b/src/components/icons/langgraph.tsx
+index 9b27bd6..1b55f22 100644
+--- a/src/components/icons/langgraph.tsx
++++ b/src/components/icons/langgraph.tsx
+@@ -16,7 +16,7 @@ export function LangGraphLogoSVG({
+       fill="none"
+       xmlns="http://www.w3.org/2000/svg"
+     >
+-      <g clip-path="url(#clip0_7880_26096)">
++      <g clipPath="url(#clip0_7880_26096)">
+         <path
+           d="M1599.44 227.244H1598.94C1589.71 205.732 1563.05 182.656 1518.96 182.656C1447.21 182.656 1395.95 232.889 1395.95 316.953C1395.95 401.018 1447.71 452.28 1519.45 452.28C1565.07 452.28 1588.64 429.738 1598.9 404.641H1599.4V436.413C1599.4 481.535 1576.32 503.047 1534.82 503.047C1499.96 503.047 1476.92 490.727 1470.78 462.044H1406.21C1413.38 514.337 1461.59 553.28 1535.89 553.28C1606.11 553.28 1668.62 517.884 1668.62 427.183V189.827H1599.47V227.244H1599.44ZM1533.79 400.522C1486.12 400.522 1462.01 361.045 1462.01 317.487C1462.01 273.929 1486.61 234.987 1533.79 234.987C1580.97 234.987 1605.54 279.574 1605.54 317.487C1605.54 355.4 1586.05 400.522 1533.79 400.522Z"
+           fill="#030710"
+@@ -62,7 +62,7 @@ export function LangGraphLogoSVG({
+           fill="#030710"
+         />
+       </g>
+-      <g clip-path="url(#clip1_7880_26096)">
++      <g clipPath="url(#clip1_7880_26096)">
+         <path
+           d="M153.197 324.988C181.918 296.266 198.063 257.269 198.063 216.654C198.063 176.039 181.904 137.042 153.197 108.32L44.866 0C16.159 28.7218 0 67.7192 0 108.334C0 148.949 16.159 187.946 44.866 216.668L153.183 324.988H153.197Z"
+           fill="#030710"
+diff --git a/src/components/thread/index.tsx b/src/components/thread/index.tsx
+index fbb71e7..54c0439 100644
+--- a/src/components/thread/index.tsx
++++ b/src/components/thread/index.tsx
+@@ -12,7 +12,7 @@ import {
+   DO_NOT_RENDER_ID_PREFIX,
+   ensureToolCallsHaveResponses,
+ } from "@/lib/ensure-tool-responses";
+-import { LangGraphLogoSVG } from "../icons/langgraph";
++import { APP_NAME } from "../icons/brand";
+ import { TooltipIconButton } from "./tooltip-icon-button";
+ import {
+   ArrowDown,
+@@ -30,13 +30,6 @@ import { toast } from "sonner";
+ import { useMediaQuery } from "@/hooks/useMediaQuery";
+ import { Label } from "../ui/label";
+ import { Switch } from "../ui/switch";
+-import { GitHubSVG } from "../icons/github";
+-import {
+-  Tooltip,
+-  TooltipContent,
+-  TooltipProvider,
+-  TooltipTrigger,
+-} from "../ui/tooltip";
+ import { useFileUpload } from "@/hooks/use-file-upload";
+ import { ContentBlocksPreview } from "./ContentBlocksPreview";
+ import {
+@@ -87,53 +80,7 @@ function ScrollToBottom(props: { className?: string }) {
+   );
+ }
+ 
+-function OpenGitHubRepo() {
+-  return (
+-    <TooltipProvider>
+-      <Tooltip>
+-        <TooltipTrigger asChild>
+-          <a
+-            href="https://github.com/langchain-ai/agent-chat-ui"
+-            target="_blank"
+-            className="flex items-center justify-center"
+-          >
+-            <GitHubSVG
+-              width="24"
+-              height="24"
+-            />
+-          </a>
+-        </TooltipTrigger>
+-        <TooltipContent side="left">
+-          <p>Open GitHub repo</p>
+-        </TooltipContent>
+-      </Tooltip>
+-    </TooltipProvider>
+-  );
+-}
+-
+-function ConnectedHost({ apiUrl }: { apiUrl: string }) {
+-  let host: string;
+-  try {
+-    host = new URL(apiUrl).host;
+-  } catch {
+-    host = apiUrl;
+-  }
+ 
+-  return (
+-    <TooltipProvider>
+-      <Tooltip>
+-        <TooltipTrigger asChild>
+-          <span className="text-muted-foreground hidden max-w-40 truncate text-xs sm:inline">
+-            {host}
+-          </span>
+-        </TooltipTrigger>
+-        <TooltipContent side="bottom">
+-          <p>Connected to {apiUrl}</p>
+-        </TooltipContent>
+-      </Tooltip>
+-    </TooltipProvider>
+-  );
+-}
+ 
+ export function Thread() {
+   const [artifactContext, setArtifactContext] = useArtifactContext();
+@@ -349,9 +296,6 @@ export function Thread() {
+                   </Button>
+                 )}
+               </div>
+-              <div className="absolute top-2 right-4 flex items-center">
+-                <OpenGitHubRepo />
+-              </div>
+             </div>
+           )}
+           {chatStarted && (
+@@ -384,21 +328,13 @@ export function Thread() {
+                     damping: 30,
+                   }}
+                 >
+-                  <LangGraphLogoSVG
+-                    width={32}
+-                    height={32}
+-                  />
+                   <span className="text-xl font-semibold tracking-tight">
+-                    Agent Chat
++                    {APP_NAME}
+                   </span>
+                 </motion.button>
+-                <ConnectedHost apiUrl={stream.apiUrl} />
+               </div>
+ 
+               <div className="flex items-center gap-4">
+-                <div className="flex items-center">
+-                  <OpenGitHubRepo />
+-                </div>
+                 <TooltipIconButton
+                   size="lg"
+                   className="p-4"
+@@ -461,9 +397,8 @@ export function Thread() {
+                 <div className="sticky bottom-0 flex flex-col items-center gap-8 bg-white">
+                   {!chatStarted && (
+                     <div className="flex items-center gap-3">
+-                      <LangGraphLogoSVG className="h-8 flex-shrink-0" />
+                       <h1 className="text-2xl font-semibold tracking-tight">
+-                        Agent Chat
++                        {APP_NAME}
+                       </h1>
+                     </div>
+                   )}
+diff --git a/src/providers/Stream.tsx b/src/providers/Stream.tsx
+index 0e96e77..fc34bc6 100644
+--- a/src/providers/Stream.tsx
++++ b/src/providers/Stream.tsx
+@@ -18,7 +18,7 @@ import {
+ import { useQueryState } from "nuqs";
+ import { Input } from "@/components/ui/input";
+ import { Button } from "@/components/ui/button";
+-import { LangGraphLogoSVG } from "@/components/icons/langgraph";
++import { APP_NAME } from "@/components/icons/brand";
+ import { Label } from "@/components/ui/label";
+ import { Switch } from "@/components/ui/switch";
+ import { ArrowRight } from "lucide-react";
+@@ -182,13 +182,12 @@ export const StreamProvider: React.FC<{ children: ReactNode }> = ({
+         <div className="animate-in fade-in-0 zoom-in-95 bg-background flex max-w-3xl flex-col rounded-lg border shadow-lg">
+           <div className="mt-14 flex flex-col gap-2 border-b p-6">
+             <div className="flex flex-col items-start gap-2">
+-              <LangGraphLogoSVG className="h-7" />
+               <h1 className="text-xl font-semibold tracking-tight">
+-                Agent Chat
++                {APP_NAME}
+               </h1>
+             </div>
+             <p className="text-muted-foreground">
+-              Welcome to Agent Chat! Before you get started, you need to enter
++              Welcome to {APP_NAME}! Before you get started, you need to enter
+               the URL of the deployment and the assistant / graph ID.
+             </p>
+           </div>

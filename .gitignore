@@ -1,0 +1,33 @@
+# Secrets: never commit real keys (copy .env.example instead)
+.env
+.env.*
+!.env.example
+!ui/.env.example
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+node_modules/
+*.tsbuildinfo
+
+# Local data and state: rebuilt by the ingest / created at runtime
+chroma-data/
+.langgraph_api/
+.cache/
+
+# Third-party repos cloned locally (LangChain docs, Agent Chat UI): see README
+vendor/
+
+# Personal drafts
+docs/linkedin-*
+
+# OS / editor / logs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

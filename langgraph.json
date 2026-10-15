@@ -1,0 +1,11 @@
+{
+  "$schema": "https://langgra.ph/schema.json",
+  "dependencies": ["."],
+  "graphs": {
+    "docs_agent": "./agent/graph.py:make_graph"
+  },
+  "http": {
+    "app": "./agent/webapp.py:app"
+  },
+  "env": ".env"
+}

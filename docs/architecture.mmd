@@ -1,0 +1,30 @@
+flowchart TB
+    subgraph BUILD["BUILD TIME: ingest + sync"]
+        direction LR
+        D["Docs<br/>1,008 .mdx pages"] --> R["Render and clean<br/>inline snippets, normalize MDX"]
+        R --> C["Split at every heading<br/>##, ###, ####"]
+        C --> E["Embed each chunk"]
+        C --> T["Path tree: map of every folder and file<br/>one gzipped JSON record, 64 KB<br/>path, size, access groups"]
+        S["Sync job<br/>fingerprint every page,<br/>re-embed only changed ones"] -.-> E
+    end
+
+    E --> V[("Vector store<br/>chunks + metadata:<br/>page, chunk_index, access flags")]
+    T --> V
+
+    subgraph RUN["RUNTIME"]
+        direction TB
+        U["User"] --> A["LangGraph agent<br/>guardrails, retries, fallbacks<br/>traced in LangSmith"]
+        A -->|"MCP"| M["MCP server"]
+        M --> Q["search tool<br/>dense vectors + BM25<br/>merged with RRF"]
+        M --> SH["filesystem tool<br/>just-bash: pipes, flags,<br/>rg, head, sed, jq"]
+        SH --> FS["Virtual filesystem<br/>answers every file call"]
+        FS -->|"ls / cd / find"| MEM["Path tree in memory<br/>no database call"]
+        FS -->|"cat / head"| CAT["Fetch page chunks<br/>sort by chunk_index, join, cache"]
+        FS -->|"grep / rg"| G["Vector store regex filter<br/>→ prefetch candidate pages<br/>→ real ripgrep on only those"]
+        FS -->|"write / rm"| RO["Blocked: read-only"]
+    end
+
+    V -. "tree loaded once at startup" .-> MEM
+    CAT --> V
+    G --> V
+    Q --> V

@@ -1,0 +1,27 @@
+{
+  "name": "docs-chromafs-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mintlify-style ChromaFs: a read-only virtual docs filesystem over Chroma, served as an MCP server via just-bash.",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "shell": "tsx src/shell.ts",
+    "test": "tsx src/smoke.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/yargs-parser": "^21.0.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@chroma-core/default-embed": "^0.1.9",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "chromadb": "^3.5.0",
+    "just-bash": "^3.6.0",
+    "yargs-parser": "^22.0.0",
+    "zod": "^4.6.7"
+  }
+}

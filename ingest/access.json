@@ -1,0 +1,6 @@
+{
+  "_comment": "Path-prefix access rules (longest prefix wins). Pages with no rule are public. Users only see pages whose groups they hold; hidden pages never appear in the tree.",
+  "rules": [
+    { "prefix": "/internal/", "groups": ["staff"] }
+  ]
+}
