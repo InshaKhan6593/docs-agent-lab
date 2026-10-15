@@ -1,0 +1,4 @@
+# Store text with LF in the repo; keep patches byte-exact so `git apply` works on every OS
+* text=auto eol=lf
+*.patch -text
+*.png binary
